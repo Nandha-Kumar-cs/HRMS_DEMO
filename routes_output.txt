@@ -1,0 +1,196 @@
+
+  [34mGET[39m[38;5;103m|[39m[38;5;103mHEAD[39m        [37m/[39m[38;5;103m ............................................................ dashboard › DashboardController@index[39m
+  [34mGET[39m[38;5;103m|[39m[38;5;103mHEAD[39m        [37mactivity-logs[39m[38;5;103m .................................... activity-logs.index › ActivityLogController@index[39m
+  [34mGET[39m[38;5;103m|[39m[38;5;103mHEAD[39m        [37mapi/mobile-modules[39m[38;5;103m .................................. mobile-access.api › MobileAccessController@api[39m
+  [34mGET[39m[38;5;103m|[39m[38;5;103mHEAD[39m        [37massets[39m[38;5;103m ................................................. assets.index › CompanyAssetController@index[39m
+  [33mPOST[39m            [37massets[39m[38;5;103m ................................................. assets.store › CompanyAssetController@store[39m
+  [34mGET[39m[38;5;103m|[39m[38;5;103mHEAD[39m        [37massets/create[39m[38;5;103m ........................................ assets.create › CompanyAssetController@create[39m
+  [33mPUT[39m[38;5;103m|[39m[33mPATCH[39m       [37massets/[39m[33m{asset}[39m[38;5;103m ....................................... assets.update › CompanyAssetController@update[39m
+  [31mDELETE[39m          [37massets/[39m[33m{asset}[39m[38;5;103m ..................................... assets.destroy › CompanyAssetController@destroy[39m
+  [34mGET[39m[38;5;103m|[39m[38;5;103mHEAD[39m        [37massets/[39m[33m{asset}[39m[37m/assign[39m[38;5;103m ................................ assets.assign › CompanyAssetController@assign[39m
+  [33mPOST[39m            [37massets/[39m[33m{asset}[39m[37m/assign[39m[38;5;103m ................. assets.assign.store › CompanyAssetController@storeAssignment[39m
+  [34mGET[39m[38;5;103m|[39m[38;5;103mHEAD[39m        [37massets/[39m[33m{asset}[39m[37m/edit[39m[38;5;103m ...................................... assets.edit › CompanyAssetController@edit[39m
+  [34mGET[39m[38;5;103m|[39m[38;5;103mHEAD[39m        [37massets/[39m[33m{asset}[39m[37m/return[39m[38;5;103m ....................... assets.return-form › CompanyAssetController@returnForm[39m
+  [33mPOST[39m            [37massets/[39m[33m{asset}[39m[37m/return[39m[38;5;103m ......................... assets.return › CompanyAssetController@processReturn[39m
+  [34mGET[39m[38;5;103m|[39m[38;5;103mHEAD[39m        [37mattendance[39m[38;5;103m ........................................... attendance.index › AttendanceController@index[39m
+  [33mPOST[39m            [37mattendance[39m[38;5;103m ........................................... attendance.store › AttendanceController@store[39m
+  [33mPOST[39m            [37mattendance/import[39m[38;5;103m .................................. attendance.import › AttendanceController@import[39m
+  [33mPOST[39m            [37mattendance/import-monthly[39m[38;5;103m ........... attendance.import-monthly › AttendanceController@importMonthly[39m
+  [34mGET[39m[38;5;103m|[39m[38;5;103mHEAD[39m        [37mattendance/report[39m[38;5;103m .................................. attendance.report › AttendanceController@report[39m
+  [34mGET[39m[38;5;103m|[39m[38;5;103mHEAD[39m        [37mbenefit-fund-types[39m[38;5;103m ...................... benefit-fund-types.index › BenefitFundTypeController@index[39m
+  [33mPOST[39m            [37mbenefit-fund-types[39m[38;5;103m ...................... benefit-fund-types.store › BenefitFundTypeController@store[39m
+  [33mPUT[39m[38;5;103m|[39m[33mPATCH[39m       [37mbenefit-fund-types/[39m[33m{benefit_fund_type}[39m[38;5;103m benefit-fund-types.update › BenefitFundTypeController@update[39m
+  [31mDELETE[39m          [37mbenefit-fund-types/[39m[33m{benefit_fund_type}[39m[38;5;103m benefit-fund-types.destroy › BenefitFundTypeController@destr…[39m
+  [34mGET[39m[38;5;103m|[39m[38;5;103mHEAD[39m        [37mbenefit-fund-types/[39m[33m{benefit_fund_type}[39m[37m/edit[39m[38;5;103m benefit-fund-types.edit › BenefitFundTypeController@edit[39m
+  [34mGET[39m[38;5;103m|[39m[38;5;103mHEAD[39m        [37mconfirmation-letters[39m[38;5;103m ............... confirmation-letters.index › ConfirmationLetterController@index[39m
+  [33mPOST[39m            [37mconfirmation-letters[39m[38;5;103m ............... confirmation-letters.store › ConfirmationLetterController@store[39m
+  [34mGET[39m[38;5;103m|[39m[38;5;103mHEAD[39m        [37mconfirmation-letters/create[39m[38;5;103m ...... confirmation-letters.create › ConfirmationLetterController@create[39m
+  [34mGET[39m[38;5;103m|[39m[38;5;103mHEAD[39m        [37mconfirmation-letters/[39m[33m{confirmationLetter}[39m[37m/pdf[39m[38;5;103m confirmation-letters.pdf › ConfirmationLetterControll…[39m
+  [34mGET[39m[38;5;103m|[39m[38;5;103mHEAD[39m        [37mconfirmation-letters/[39m[33m{confirmation_letter}[39m[38;5;103m confirmation-letters.show › ConfirmationLetterController…[39m
+  [31mDELETE[39m          [37mconfirmation-letters/[39m[33m{confirmation_letter}[39m[38;5;103m confirmation-letters.destroy › ConfirmationLetterControl…[39m
+  [34mGET[39m[38;5;103m|[39m[38;5;103mHEAD[39m        [37mdepartments[39m[38;5;103m ......................................... departments.index › DepartmentController@index[39m
+  [33mPOST[39m            [37mdepartments[39m[38;5;103m ......................................... departments.store › DepartmentController@store[39m
+  [34mGET[39m[38;5;103m|[39m[38;5;103mHEAD[39m        [37mdepartments/create[39m[38;5;103m ................................ departments.create › DepartmentController@create[39m
+  [33mPUT[39m[38;5;103m|[39m[33mPATCH[39m       [37mdepartments/[39m[33m{department}[39m[38;5;103m .......................... departments.update › DepartmentController@update[39m
+  [31mDELETE[39m          [37mdepartments/[39m[33m{department}[39m[38;5;103m ........................ departments.destroy › DepartmentController@destroy[39m
+  [34mGET[39m[38;5;103m|[39m[38;5;103mHEAD[39m        [37mdepartments/[39m[33m{department}[39m[37m/edit[39m[38;5;103m ......................... departments.edit › DepartmentController@edit[39m
+  [34mGET[39m[38;5;103m|[39m[38;5;103mHEAD[39m        [37mdesignations[39m[38;5;103m ...................................... designations.index › DesignationController@index[39m
+  [33mPOST[39m            [37mdesignations[39m[38;5;103m ...................................... designations.store › DesignationController@store[39m
+  [34mGET[39m[38;5;103m|[39m[38;5;103mHEAD[39m        [37mdesignations/create[39m[38;5;103m ............................. designations.create › DesignationController@create[39m
+  [33mPUT[39m[38;5;103m|[39m[33mPATCH[39m       [37mdesignations/[39m[33m{designation}[39m[38;5;103m ...................... designations.update › DesignationController@update[39m
+  [31mDELETE[39m          [37mdesignations/[39m[33m{designation}[39m[38;5;103m .................... designations.destroy › DesignationController@destroy[39m
+  [34mGET[39m[38;5;103m|[39m[38;5;103mHEAD[39m        [37mdesignations/[39m[33m{designation}[39m[37m/edit[39m[38;5;103m ..................... designations.edit › DesignationController@edit[39m
+  [34mGET[39m[38;5;103m|[39m[38;5;103mHEAD[39m        [37memployee-benefits[39m[38;5;103m ........................ employee-benefits.index › EmployeeBenefitController@index[39m
+  [33mPOST[39m            [37memployee-benefits[39m[38;5;103m ........................ employee-benefits.store › EmployeeBenefitController@store[39m
+  [34mGET[39m[38;5;103m|[39m[38;5;103mHEAD[39m        [37memployee-benefits/create[39m[38;5;103m ............... employee-benefits.create › EmployeeBenefitController@create[39m
+  [34mGET[39m[38;5;103m|[39m[38;5;103mHEAD[39m        [37memployee-benefits/[39m[33m{employee_benefit}[39m[38;5;103m ....... employee-benefits.show › EmployeeBenefitController@show[39m
+  [33mPUT[39m[38;5;103m|[39m[33mPATCH[39m       [37memployee-benefits/[39m[33m{employee_benefit}[39m[38;5;103m ... employee-benefits.update › EmployeeBenefitController@update[39m
+  [31mDELETE[39m          [37memployee-benefits/[39m[33m{employee_benefit}[39m[38;5;103m . employee-benefits.destroy › EmployeeBenefitController@destroy[39m
+  [34mGET[39m[38;5;103m|[39m[38;5;103mHEAD[39m        [37memployee-benefits/[39m[33m{employee_benefit}[39m[37m/edit[39m[38;5;103m .. employee-benefits.edit › EmployeeBenefitController@edit[39m
+  [34mGET[39m[38;5;103m|[39m[38;5;103mHEAD[39m        [37memployee-bonuses[39m[38;5;103m ............................ employee-bonuses.index › EmployeeBonusController@index[39m
+  [33mPOST[39m            [37memployee-bonuses[39m[38;5;103m ............................ employee-bonuses.store › EmployeeBonusController@store[39m
+  [34mGET[39m[38;5;103m|[39m[38;5;103mHEAD[39m        [37memployee-bonuses/create[39m[38;5;103m ................... employee-bonuses.create › EmployeeBonusController@create[39m
+  [33mPOST[39m            [37memployee-bonuses/[39m[33m{employeeBonus}[39m[37m/approve[39m[38;5;103m employee-bonuses.approve › EmployeeBonusController@approve[39m
+  [33mPOST[39m            [37memployee-bonuses/[39m[33m{employeeBonus}[39m[37m/reject[39m[38;5;103m ... employee-bonuses.reject › EmployeeBonusController@reject[39m
+  [34mGET[39m[38;5;103m|[39m[38;5;103mHEAD[39m        [37memployee-bonuses/[39m[33m{employee_bonus}[39m[38;5;103m ............. employee-bonuses.show › EmployeeBonusController@show[39m
+  [33mPUT[39m[38;5;103m|[39m[33mPATCH[39m       [37memployee-bonuses/[39m[33m{employee_bonus}[39m[38;5;103m ......... employee-bonuses.update › EmployeeBonusController@update[39m
+  [31mDELETE[39m          [37memployee-bonuses/[39m[33m{employee_bonus}[39m[38;5;103m ....... employee-bonuses.destroy › EmployeeBonusController@destroy[39m
+  [34mGET[39m[38;5;103m|[39m[38;5;103mHEAD[39m        [37memployee-bonuses/[39m[33m{employee_bonus}[39m[37m/edit[39m[38;5;103m ........ employee-bonuses.edit › EmployeeBonusController@edit[39m
+  [34mGET[39m[38;5;103m|[39m[38;5;103mHEAD[39m        [37memployee-documents[39m[38;5;103m ..................... employee-documents.index › EmployeeDocumentController@index[39m
+  [33mPOST[39m            [37memployee-documents[39m[38;5;103m ..................... employee-documents.store › EmployeeDocumentController@store[39m
+  [31mDELETE[39m          [37memployee-documents/[39m[33m{document}[39m[38;5;103m ...... employee-documents.destroy › EmployeeDocumentController@destroy[39m
+  [34mGET[39m[38;5;103m|[39m[38;5;103mHEAD[39m        [37memployee-documents/[39m[33m{document}[39m[37m/download[39m[38;5;103m employee-documents.download › EmployeeDocumentController@dow…[39m
+  [34mGET[39m[38;5;103m|[39m[38;5;103mHEAD[39m        [37memployee-documents/[39m[33m{document}[39m[37m/preview[39m[38;5;103m employee-documents.preview › EmployeeDocumentController@previ…[39m
+  [34mGET[39m[38;5;103m|[39m[38;5;103mHEAD[39m        [37memployees[39m[38;5;103m ............................................... employees.index › EmployeeController@index[39m
+  [33mPOST[39m            [37memployees[39m[38;5;103m ............................................... employees.store › EmployeeController@store[39m
+  [34mGET[39m[38;5;103m|[39m[38;5;103mHEAD[39m        [37memployees/create[39m[38;5;103m ...................................... employees.create › EmployeeController@create[39m
+  [33mPOST[39m            [37memployees/import[39m[38;5;103m ...................................... employees.import › EmployeeController@import[39m
+  [34mGET[39m[38;5;103m|[39m[38;5;103mHEAD[39m        [37memployees/import/template[39m[38;5;103m .......... employees.import.template › EmployeeController@downloadTemplate[39m
+  [34mGET[39m[38;5;103m|[39m[38;5;103mHEAD[39m        [37memployees/[39m[33m{employee}[39m[38;5;103m ...................................... employees.show › EmployeeController@show[39m
+  [33mPUT[39m[38;5;103m|[39m[33mPATCH[39m       [37memployees/[39m[33m{employee}[39m[38;5;103m .................................. employees.update › EmployeeController@update[39m
+  [31mDELETE[39m          [37memployees/[39m[33m{employee}[39m[38;5;103m ................................ employees.destroy › EmployeeController@destroy[39m
+  [34mGET[39m[38;5;103m|[39m[38;5;103mHEAD[39m        [37memployees/[39m[33m{employee}[39m[37m/edit[39m[38;5;103m ................................. employees.edit › EmployeeController@edit[39m
+  [33mPOST[39m            [37memployees/[39m[33m{employee}[39m[37m/family-members[39m[38;5;103m .... family-members.store › EmployeeFamilyMemberController@store[39m
+  [34mGET[39m[38;5;103m|[39m[38;5;103mHEAD[39m        [37memployees/[39m[33m{employee}[39m[37m/salary-status[39m[38;5;103m ....... employees.salary-status › EmployeeController@salaryStatus[39m
+  [34mGET[39m[38;5;103m|[39m[38;5;103mHEAD[39m        [37mentities[39m[38;5;103m ................................................... entities.index › EntityController@index[39m
+  [33mPOST[39m            [37mentities[39m[38;5;103m ................................................... entities.store › EntityController@store[39m
+  [34mGET[39m[38;5;103m|[39m[38;5;103mHEAD[39m        [37mentities/create[39m[38;5;103m .......................................... entities.create › EntityController@create[39m
+  [33mPUT[39m[38;5;103m|[39m[33mPATCH[39m       [37mentities/[39m[33m{entity}[39m[38;5;103m ........................................ entities.update › EntityController@update[39m
+  [31mDELETE[39m          [37mentities/[39m[33m{entity}[39m[38;5;103m ...................................... entities.destroy › EntityController@destroy[39m
+  [34mGET[39m[38;5;103m|[39m[38;5;103mHEAD[39m        [37mentities/[39m[33m{entity}[39m[37m/edit[39m[38;5;103m ....................................... entities.edit › EntityController@edit[39m
+  [34mGET[39m[38;5;103m|[39m[38;5;103mHEAD[39m        [37mfamily-members/[39m[33m{familyMember}[39m[38;5;103m ............ family-members.show › EmployeeFamilyMemberController@show[39m
+  [33mPUT[39m             [37mfamily-members/[39m[33m{familyMember}[39m[38;5;103m ........ family-members.update › EmployeeFamilyMemberController@update[39m
+  [31mDELETE[39m          [37mfamily-members/[39m[33m{familyMember}[39m[38;5;103m ...... family-members.destroy › EmployeeFamilyMemberController@destroy[39m
+  [34mGET[39m[38;5;103m|[39m[38;5;103mHEAD[39m        [37mget-designations/[39m[33m{department}[39m[38;5;103m ...... designations.by-department › DesignationController@byDepartment[39m
+  [34mGET[39m[38;5;103m|[39m[38;5;103mHEAD[39m        [37mholiday-types[39m[38;5;103m .................................... holiday-types.index › HolidayTypeController@index[39m
+  [33mPOST[39m            [37mholiday-types[39m[38;5;103m .................................... holiday-types.store › HolidayTypeController@store[39m
+  [33mPUT[39m[38;5;103m|[39m[33mPATCH[39m       [37mholiday-types/[39m[33m{holiday_type}[39m[38;5;103m ................... holiday-types.update › HolidayTypeController@update[39m
+  [31mDELETE[39m          [37mholiday-types/[39m[33m{holiday_type}[39m[38;5;103m ................. holiday-types.destroy › HolidayTypeController@destroy[39m
+  [34mGET[39m[38;5;103m|[39m[38;5;103mHEAD[39m        [37mholiday-types/[39m[33m{holiday_type}[39m[37m/edit[39m[38;5;103m .................. holiday-types.edit › HolidayTypeController@edit[39m
+  [34mGET[39m[38;5;103m|[39m[38;5;103mHEAD[39m        [37mholidays[39m[38;5;103m .................................................. holidays.index › HolidayController@index[39m
+  [33mPOST[39m            [37mholidays[39m[38;5;103m .................................................. holidays.store › HolidayController@store[39m
+  [33mPOST[39m            [37mholidays/import[39m[38;5;103m ......................................... holidays.import › HolidayController@import[39m
+  [31mDELETE[39m          [37mholidays/[39m[33m{holiday}[39m[38;5;103m .................................... holidays.destroy › HolidayController@destroy[39m
+  [34mGET[39m[38;5;103m|[39m[38;5;103mHEAD[39m        [37mincrement-letters[39m[38;5;103m ........................ increment-letters.index › IncrementLetterController@index[39m
+  [33mPOST[39m            [37mincrement-letters[39m[38;5;103m ........................ increment-letters.store › IncrementLetterController@store[39m
+  [34mGET[39m[38;5;103m|[39m[38;5;103mHEAD[39m        [37mincrement-letters/create[39m[38;5;103m ............... increment-letters.create › IncrementLetterController@create[39m
+  [34mGET[39m[38;5;103m|[39m[38;5;103mHEAD[39m        [37mincrement-letters/[39m[33m{incrementLetter}[39m[37m/pdf[39m[38;5;103m ...... increment-letters.pdf › IncrementLetterController@pdf[39m
+  [34mGET[39m[38;5;103m|[39m[38;5;103mHEAD[39m        [37mincrement-letters/[39m[33m{increment_letter}[39m[38;5;103m ....... increment-letters.show › IncrementLetterController@show[39m
+  [31mDELETE[39m          [37mincrement-letters/[39m[33m{increment_letter}[39m[38;5;103m . increment-letters.destroy › IncrementLetterController@destroy[39m
+  [34mGET[39m[38;5;103m|[39m[38;5;103mHEAD[39m        [37mincrements[39m[38;5;103m ............................................ increments.index › IncrementController@index[39m
+  [33mPOST[39m            [37mincrements[39m[38;5;103m ............................................ increments.store › IncrementController@store[39m
+  [34mGET[39m[38;5;103m|[39m[38;5;103mHEAD[39m        [37mincrements/create[39m[38;5;103m ................................... increments.create › IncrementController@create[39m
+  [34mGET[39m[38;5;103m|[39m[38;5;103mHEAD[39m        [37mincrements/employee-salary[39m[38;5;103m ........... increments.current-salary › IncrementController@currentSalary[39m
+  [33mPUT[39m[38;5;103m|[39m[33mPATCH[39m       [37mincrements/[39m[33m{increment}[39m[38;5;103m .............................. increments.update › IncrementController@update[39m
+  [31mDELETE[39m          [37mincrements/[39m[33m{increment}[39m[38;5;103m ............................ increments.destroy › IncrementController@destroy[39m
+  [34mGET[39m[38;5;103m|[39m[38;5;103mHEAD[39m        [37mincrements/[39m[33m{increment}[39m[37m/edit[39m[38;5;103m ............................. increments.edit › IncrementController@edit[39m
+  [34mGET[39m[38;5;103m|[39m[38;5;103mHEAD[39m        [37mleave-requests[39m[38;5;103m ................................. leave-requests.index › LeaveRequestController@index[39m
+  [33mPOST[39m            [37mleave-requests[39m[38;5;103m ................................. leave-requests.store › LeaveRequestController@store[39m
+  [34mGET[39m[38;5;103m|[39m[38;5;103mHEAD[39m        [37mleave-requests/create[39m[38;5;103m ........................ leave-requests.create › LeaveRequestController@create[39m
+  [33mPOST[39m            [37mleave-requests/[39m[33m{leaveRequest}[39m[37m/approve[39m[38;5;103m ...... leave-requests.approve › LeaveRequestController@approve[39m
+  [33mPOST[39m            [37mleave-requests/[39m[33m{leaveRequest}[39m[37m/reject[39m[38;5;103m ......... leave-requests.reject › LeaveRequestController@reject[39m
+  [34mGET[39m[38;5;103m|[39m[38;5;103mHEAD[39m        [37mleave-requests/[39m[33m{leave_request}[39m[38;5;103m ................... leave-requests.show › LeaveRequestController@show[39m
+  [34mGET[39m[38;5;103m|[39m[38;5;103mHEAD[39m        [37mleave-types[39m[38;5;103m .......................................... leave-types.index › LeaveTypeController@index[39m
+  [33mPOST[39m            [37mleave-types[39m[38;5;103m .......................................... leave-types.store › LeaveTypeController@store[39m
+  [33mPUT[39m[38;5;103m|[39m[33mPATCH[39m       [37mleave-types/[39m[33m{leave_type}[39m[38;5;103m ........................... leave-types.update › LeaveTypeController@update[39m
+  [31mDELETE[39m          [37mleave-types/[39m[33m{leave_type}[39m[38;5;103m ......................... leave-types.destroy › LeaveTypeController@destroy[39m
+  [34mGET[39m[38;5;103m|[39m[38;5;103mHEAD[39m        [37mloans[39m[38;5;103m ........................................................... loans.index › LoanController@index[39m
+  [33mPOST[39m            [37mloans[39m[38;5;103m ........................................................... loans.store › LoanController@store[39m
+  [34mGET[39m[38;5;103m|[39m[38;5;103mHEAD[39m        [37mloans/create[39m[38;5;103m .................................................. loans.create › LoanController@create[39m
+  [34mGET[39m[38;5;103m|[39m[38;5;103mHEAD[39m        [37mloans/[39m[33m{loan}[39m[38;5;103m ...................................................... loans.show › LoanController@show[39m
+  [33mPUT[39m[38;5;103m|[39m[33mPATCH[39m       [37mloans/[39m[33m{loan}[39m[38;5;103m .................................................. loans.update › LoanController@update[39m
+  [31mDELETE[39m          [37mloans/[39m[33m{loan}[39m[38;5;103m ................................................ loans.destroy › LoanController@destroy[39m
+  [34mGET[39m[38;5;103m|[39m[38;5;103mHEAD[39m        [37mloans/[39m[33m{loan}[39m[37m/edit[39m[38;5;103m ................................................. loans.edit › LoanController@edit[39m
+  [33mPOST[39m            [37mloans/[39m[33m{loan}[39m[37m/repayments[39m[38;5;103m ..................... loans.repayments.store › LoanController@storeRepayment[39m
+  [34mGET[39m[38;5;103m|[39m[38;5;103mHEAD[39m        [37mlogin[39m[38;5;103m ........................................................ login › Auth\AuthController@showLogin[39m
+  [33mPOST[39m            [37mlogin[39m[38;5;103m ....................................................... login.post › Auth\AuthController@login[39m
+  [33mPOST[39m            [37mlogout[39m[38;5;103m ......................................................... logout › Auth\AuthController@logout[39m
+  [34mGET[39m[38;5;103m|[39m[38;5;103mHEAD[39m        [37mmobile-access[39m[38;5;103m ................................... mobile-access.index › MobileAccessController@index[39m
+  [33mPUT[39m             [37mmobile-access[39m[38;5;103m ................................. mobile-access.update › MobileAccessController@update[39m
+  [34mGET[39m[38;5;103m|[39m[38;5;103mHEAD[39m        [37mno-due[39m[38;5;103m ............................................ no-due.index › CompanyAssetController@noDueIndex[39m
+  [33mPOST[39m            [37mno-due[39m[38;5;103m ............................................ no-due.store › CompanyAssetController@noDueStore[39m
+  [34mGET[39m[38;5;103m|[39m[38;5;103mHEAD[39m        [37mno-due/create[39m[38;5;103m ................................... no-due.create › CompanyAssetController@noDueCreate[39m
+  [34mGET[39m[38;5;103m|[39m[38;5;103mHEAD[39m        [37mno-due/[39m[33m{certificate}[39m[38;5;103m ................................ no-due.show › CompanyAssetController@noDueShow[39m
+  [33mPOST[39m            [37mno-due/[39m[33m{certificate}[39m[37m/approve[39m[38;5;103m .................. no-due.approve › CompanyAssetController@noDueApprove[39m
+  [34mGET[39m[38;5;103m|[39m[38;5;103mHEAD[39m        [37moffer-letters[39m[38;5;103m .................................... offer-letters.index › OfferLetterController@index[39m
+  [33mPOST[39m            [37moffer-letters[39m[38;5;103m .................................... offer-letters.store › OfferLetterController@store[39m
+  [34mGET[39m[38;5;103m|[39m[38;5;103mHEAD[39m        [37moffer-letters/create[39m[38;5;103m ........................... offer-letters.create › OfferLetterController@create[39m
+  [34mGET[39m[38;5;103m|[39m[38;5;103mHEAD[39m        [37moffer-letters/[39m[33m{offerLetter}[39m[37m/pdf[39m[38;5;103m ...................... offer-letters.pdf › OfferLetterController@pdf[39m
+  [34mGET[39m[38;5;103m|[39m[38;5;103mHEAD[39m        [37moffer-letters/[39m[33m{offer_letter}[39m[38;5;103m ....................... offer-letters.show › OfferLetterController@show[39m
+  [31mDELETE[39m          [37moffer-letters/[39m[33m{offer_letter}[39m[38;5;103m ................. offer-letters.destroy › OfferLetterController@destroy[39m
+  [34mGET[39m[38;5;103m|[39m[38;5;103mHEAD[39m        [37mpromotions[39m[38;5;103m ............................................ promotions.index › PromotionController@index[39m
+  [33mPOST[39m            [37mpromotions[39m[38;5;103m ............................................ promotions.store › PromotionController@store[39m
+  [34mGET[39m[38;5;103m|[39m[38;5;103mHEAD[39m        [37mpromotions/create[39m[38;5;103m ................................... promotions.create › PromotionController@create[39m
+  [33mPUT[39m[38;5;103m|[39m[33mPATCH[39m       [37mpromotions/[39m[33m{promotion}[39m[38;5;103m .............................. promotions.update › PromotionController@update[39m
+  [31mDELETE[39m          [37mpromotions/[39m[33m{promotion}[39m[38;5;103m ............................ promotions.destroy › PromotionController@destroy[39m
+  [34mGET[39m[38;5;103m|[39m[38;5;103mHEAD[39m        [37mpromotions/[39m[33m{promotion}[39m[37m/edit[39m[38;5;103m ............................. promotions.edit › PromotionController@edit[39m
+  [34mGET[39m[38;5;103m|[39m[38;5;103mHEAD[39m        [37mreports/benefits[39m[38;5;103m ............................ reports.benefits-index › BenefitReportController@index[39m
+  [34mGET[39m[38;5;103m|[39m[38;5;103mHEAD[39m        [37mreports/bonuses[39m[38;5;103m .................................. reports.bonuses › BenefitReportController@bonuses[39m
+  [34mGET[39m[38;5;103m|[39m[38;5;103mHEAD[39m        [37mreports/employee-history[39m[38;5;103m ........ reports.employee-history › BenefitReportController@employeeHistory[39m
+  [34mGET[39m[38;5;103m|[39m[38;5;103mHEAD[39m        [37mreports/monthly-benefits[39m[38;5;103m ........ reports.monthly-benefits › BenefitReportController@monthlyBenefits[39m
+  [34mGET[39m[38;5;103m|[39m[38;5;103mHEAD[39m        [37mreports/payroll-impact[39m[38;5;103m .............. reports.payroll-impact › BenefitReportController@payrollImpact[39m
+  [34mGET[39m[38;5;103m|[39m[38;5;103mHEAD[39m        [37mroles[39m[38;5;103m ........................................................... roles.index › RoleController@index[39m
+  [33mPOST[39m            [37mroles[39m[38;5;103m ........................................................... roles.store › RoleController@store[39m
+  [34mGET[39m[38;5;103m|[39m[38;5;103mHEAD[39m        [37mroles/create[39m[38;5;103m .................................................. roles.create › RoleController@create[39m
+  [33mPUT[39m[38;5;103m|[39m[33mPATCH[39m       [37mroles/[39m[33m{role}[39m[38;5;103m .................................................. roles.update › RoleController@update[39m
+  [31mDELETE[39m          [37mroles/[39m[33m{role}[39m[38;5;103m ................................................ roles.destroy › RoleController@destroy[39m
+  [34mGET[39m[38;5;103m|[39m[38;5;103mHEAD[39m        [37mroles/[39m[33m{role}[39m[37m/edit[39m[38;5;103m ................................................. roles.edit › RoleController@edit[39m
+  [34mGET[39m[38;5;103m|[39m[38;5;103mHEAD[39m        [37msalary-components[39m[38;5;103m ........................ salary-components.index › SalaryComponentController@index[39m
+  [33mPOST[39m            [37msalary-components[39m[38;5;103m ........................ salary-components.store › SalaryComponentController@store[39m
+  [34mGET[39m[38;5;103m|[39m[38;5;103mHEAD[39m        [37msalary-components/create[39m[38;5;103m ............... salary-components.create › SalaryComponentController@create[39m
+  [33mPUT[39m[38;5;103m|[39m[33mPATCH[39m       [37msalary-components/[39m[33m{salary_component}[39m[38;5;103m ... salary-components.update › SalaryComponentController@update[39m
+  [31mDELETE[39m          [37msalary-components/[39m[33m{salary_component}[39m[38;5;103m . salary-components.destroy › SalaryComponentController@destroy[39m
+  [34mGET[39m[38;5;103m|[39m[38;5;103mHEAD[39m        [37msalary-components/[39m[33m{salary_component}[39m[37m/edit[39m[38;5;103m .. salary-components.edit › SalaryComponentController@edit[39m
+  [34mGET[39m[38;5;103m|[39m[38;5;103mHEAD[39m        [37msalary-slips[39m[38;5;103m ....................................... salary-slips.index › SalarySlipController@index[39m
+  [33mPOST[39m            [37msalary-slips[39m[38;5;103m ....................................... salary-slips.store › SalarySlipController@store[39m
+  [34mGET[39m[38;5;103m|[39m[38;5;103mHEAD[39m        [37msalary-slips/calculate[39m[38;5;103m ..................... salary-slips.calculate › SalarySlipController@calculate[39m
+  [34mGET[39m[38;5;103m|[39m[38;5;103mHEAD[39m        [37msalary-slips/create[39m[38;5;103m .............................. salary-slips.create › SalarySlipController@create[39m
+  [34mGET[39m[38;5;103m|[39m[38;5;103mHEAD[39m        [37msalary-slips/[39m[33m{salarySlip}[39m[37m/pdf[39m[38;5;103m .......................... salary-slips.pdf › SalarySlipController@pdf[39m
+  [34mGET[39m[38;5;103m|[39m[38;5;103mHEAD[39m        [37msalary-slips/[39m[33m{salary_slip}[39m[38;5;103m ........................... salary-slips.show › SalarySlipController@show[39m
+  [31mDELETE[39m          [37msalary-slips/[39m[33m{salary_slip}[39m[38;5;103m ..................... salary-slips.destroy › SalarySlipController@destroy[39m
+  [34mGET[39m[38;5;103m|[39m[38;5;103mHEAD[39m        [37msso/callback[39m[38;5;103m ............................................ sso.callback › Auth\SSOController@callback[39m
+  [34mGET[39m[38;5;103m|[39m[38;5;103mHEAD[39m        [37msso/redirect[39m[38;5;103m ............................................ sso.redirect › Auth\SSOController@redirect[39m
+  [34mGET[39m[38;5;103m|[39m[38;5;103mHEAD[39m        [37mstorage/[39m[33m{path}[39m[38;5;103m ....................................................................... storage.local[39m
+  [34mGET[39m[38;5;103m|[39m[38;5;103mHEAD[39m        [37mtraining[39m[38;5;103m ................................................. training.index › TrainingController@index[39m
+  [33mPOST[39m            [37mtraining/module[39m[38;5;103m ............................. training.module.store › TrainingController@storeModule[39m
+  [34mGET[39m[38;5;103m|[39m[38;5;103mHEAD[39m        [37mtraining/module/create[39m[38;5;103m .................... training.module.create › TrainingController@createModule[39m
+  [34mGET[39m[38;5;103m|[39m[38;5;103mHEAD[39m        [37mtraining/[39m[33m{trainingModule}[39m[38;5;103m .................................. training.show › TrainingController@show[39m
+  [33mPUT[39m             [37mtraining/[39m[33m{trainingModule}[39m[38;5;103m ................. training.module.update › TrainingController@updateModule[39m
+  [31mDELETE[39m          [37mtraining/[39m[33m{trainingModule}[39m[38;5;103m ............... training.module.destroy › TrainingController@destroyModule[39m
+  [34mGET[39m[38;5;103m|[39m[38;5;103mHEAD[39m        [37mtraining/[39m[33m{trainingModule}[39m[37m/edit[39m[38;5;103m ................ training.module.edit › TrainingController@editModule[39m
+  [33mPOST[39m            [37mtraining/[39m[33m{trainingModule}[39m[37m/lessons[39m[38;5;103m ........... training.lesson.store › TrainingController@storeLesson[39m
+  [34mGET[39m[38;5;103m|[39m[38;5;103mHEAD[39m        [37mtraining/[39m[33m{trainingModule}[39m[37m/lessons/[39m[33m{lesson}[39m[38;5;103m ............. training.lesson › TrainingController@lesson[39m
+  [33mPUT[39m             [37mtraining/[39m[33m{trainingModule}[39m[37m/lessons/[39m[33m{lesson}[39m[38;5;103m training.lesson.update › TrainingController@updateLesson[39m
+  [31mDELETE[39m          [37mtraining/[39m[33m{trainingModule}[39m[37m/lessons/[39m[33m{lesson}[39m[38;5;103m training.lesson.destroy › TrainingController@destroyLess…[39m
+  [33mPOST[39m            [37mtraining/[39m[33m{trainingModule}[39m[37m/lessons/[39m[33m{lesson}[39m[37m/complete[39m[38;5;103m training.lesson.complete › TrainingController@m…[39m
+  [34mGET[39m[38;5;103m|[39m[38;5;103mHEAD[39m        [37mtraining/[39m[33m{trainingModule}[39m[37m/manage-lessons[39m[38;5;103m training.module.lessons › TrainingController@moduleLessons[39m
+  [34mGET[39m[38;5;103m|[39m[38;5;103mHEAD[39m        [37mup[39m[38;5;103m ..................................................................... generated::J5Kg0rz3VUWPzZqr[39m
+  [34mGET[39m[38;5;103m|[39m[38;5;103mHEAD[39m        [37musers[39m[38;5;103m ........................................................... users.index › UserController@index[39m
+  [33mPOST[39m            [37musers[39m[38;5;103m ........................................................... users.store › UserController@store[39m
+  [34mGET[39m[38;5;103m|[39m[38;5;103mHEAD[39m        [37musers/create[39m[38;5;103m .................................................. users.create › UserController@create[39m
+  [33mPUT[39m[38;5;103m|[39m[33mPATCH[39m       [37musers/[39m[33m{user}[39m[38;5;103m .................................................. users.update › UserController@update[39m
+  [31mDELETE[39m          [37musers/[39m[33m{user}[39m[38;5;103m ................................................ users.destroy › UserController@destroy[39m
+  [34mGET[39m[38;5;103m|[39m[38;5;103mHEAD[39m        [37musers/[39m[33m{user}[39m[37m/edit[39m[38;5;103m ................................................. users.edit › UserController@edit[39m
+
+                                                                                                  [34;1mShowing [192] routes[39;22m
+
