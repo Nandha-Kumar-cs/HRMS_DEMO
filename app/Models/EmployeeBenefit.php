@@ -87,17 +87,17 @@ class EmployeeBenefit extends Model
                                              ->orWhere(function ($q) use ($month, $year) {
                                                  // Quarterly: Jan-Mar, Apr-Jun, Jul-Sep, Oct-Dec
                                                  $q->where('frequency', 'quarterly')
-                                                   ->where(\DB::raw("(MONTH(start_date) - 1) DIV 3"), '=', ($month - 1) % 3);
+                                                   ->where(\DB::raw("(EXTRACT(MONTH FROM start_date)::int - 1) / 3"), '=', ($month - 1) % 3);
                                              })
                                              ->orWhere(function ($q) use ($month, $year) {
                                                  // Half-yearly: Jan-Jun, Jul-Dec
                                                  $q->where('frequency', 'half_yearly')
-                                                   ->where(\DB::raw("(MONTH(start_date) - 1) DIV 6"), '=', ($month - 1) % 6);
+                                                   ->where(\DB::raw("(EXTRACT(MONTH FROM start_date)::int - 1) / 6"), '=', ($month - 1) % 6);
                                              })
                                              ->orWhere(function ($q) use ($month, $year) {
                                                  // Annual: same month as start_date
                                                  $q->where('frequency', 'annual')
-                                                   ->where(\DB::raw("MONTH(start_date)"), '=', $month);
+                                                   ->where(\DB::raw("EXTRACT(MONTH FROM start_date)::int"), '=', $month);
                                              })
                                              ->orWhere(function ($q) use ($month, $year) {
                                                  // Weekly/Fortnightly: treated as monthly for simplicity
