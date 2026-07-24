@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\ActivityLog;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class AuthController extends Controller
 {
@@ -19,18 +20,20 @@ class AuthController extends Controller
 
     public function login(Request $request)
     {
+        
         $credentials = $request->validate([
             'email'    => 'required|email',
             'password' => 'required',
         ]);
-
+        DB::enableQueryLog();
         if (Auth::attempt($credentials, $request->boolean('remember'))) {
             $request->session()->regenerate();
             ActivityLog::record('login', 'Auth',
                 'User logged in: ' . Auth::user()->name . ' (' . Auth::user()->email . ')',
                 Auth::id(), Auth::user()->name
             );
-            return redirect()->intended(route('dashboard'));
+            dd(DB::getQueryLog());
+            // return redirect()->intended(route('dashboard'));
         }
 
         return back()->withErrors([
