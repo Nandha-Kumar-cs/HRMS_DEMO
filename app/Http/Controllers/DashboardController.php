@@ -19,11 +19,11 @@ class DashboardController extends Controller
             $deptData = Department::withCount('employees')->get();
 
             // Monthly joining — last 12 months
-            $joiningRaw = Employee::selectRaw('MONTH(joining_date) as m, YEAR(joining_date) as y, COUNT(*) as cnt')
+            $joiningRaw = Employee::selectRaw('EXTRACT(MONTH FROM joining_date) AS m, EXTRACT(YEAR FROM joining_date) AS y, COUNT(*) as cnt')
                 ->whereNotNull('joining_date')
                 ->where('joining_date', '>=', now()->subYear())
-                ->groupByRaw('YEAR(joining_date), MONTH(joining_date)')
-                ->orderByRaw('YEAR(joining_date), MONTH(joining_date)')
+                ->groupByRaw('EXTRACT(YEAR FROM joining_date), EXTRACT(MONTH FROM joining_date)')
+                ->orderByRaw('EXTRACT(YEAR FROM joining_date), EXTRACT(MONTH FROM joining_date)')
                 ->get();
 
             return [
