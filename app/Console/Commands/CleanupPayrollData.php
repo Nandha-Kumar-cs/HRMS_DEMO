@@ -225,13 +225,7 @@ class CleanupPayrollData extends Command
         DB::transaction(function () use ($isDryRun, &$counts) {
             // Temporarily disable FK checks so we can delete in any order without
             // worrying about every cascade edge. Re-enabled at end of transaction.
-            // MySQL-only: Postgres has no session-level FK toggle, so there the
-            // deletion order in $deletionPlan has to be correct on its own.
-            $isMysql = DB::getDriverName() === 'mysql';
-
-            if ($isMysql) {
-                DB::statement('SET FOREIGN_KEY_CHECKS=0');
-            }
+            DB::statement('SET FOREIGN_KEY_CHECKS=0');
 
             try {
                 // ── Standard full-table purges ─────────────────────────────
@@ -247,22 +241,20 @@ class CleanupPayrollData extends Command
                 }
 
                 // ── Attendances: keep only April rows ──────────────────────
-                $aprilCount     = DB::table('attendances')->whereRaw('EXTRACT(MONTH FROM "date") = 4')->count();
-                $nonAprilCount  = DB::table('attendances')->whereRaw('EXTRACT(MONTH FROM "date") != 4')->count();
+                $aprilCount     = DB::table('attendances')->whereRaw('MONTH(date) = 4')->count();
+                $nonAprilCount  = DB::table('attendances')->whereRaw('MONTH(date) != 4')->count();
 
                 $this->line("  Purging non-April attendance records (<fg=gray>attendances</>): <fg=yellow>{$nonAprilCount} rows</> (keeping {$aprilCount} April rows)");
 
                 if (!$isDryRun) {
-                    DB::table('attendances')->whereRaw('EXTRACT(MONTH FROM "date") != 4')->delete();
+                    DB::table('attendances')->whereRaw('MONTH(date) != 4')->delete();
                 }
 
                 $counts['attendances_deleted'] = $nonAprilCount;
                 $counts['attendances_kept']    = $aprilCount;
 
             } finally {
-                if ($isMysql) {
-                    DB::statement('SET FOREIGN_KEY_CHECKS=1');
-                }
+                DB::statement('SET FOREIGN_KEY_CHECKS=1');
             }
         });
 
@@ -280,7 +272,7 @@ class CleanupPayrollData extends Command
         $totalDeleted = array_sum(array_filter($counts, fn ($k) => $k !== 'attendances_kept', ARRAY_FILTER_USE_KEY));
 
         $remainingEmployees = DB::table('employees')->count();
-        $remainingApril     = DB::table('attendances')->whereRaw('EXTRACT(MONTH FROM "date") = 4')->count();
+        $remainingApril     = DB::table('attendances')->whereRaw('MONTH(date) = 4')->count();
 
         $this->line('  ┌─────────────────────────────────────────────────────┐');
         $this->line('  │               CLEANUP SUMMARY                       │');

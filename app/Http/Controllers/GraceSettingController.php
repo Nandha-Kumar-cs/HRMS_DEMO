@@ -60,14 +60,14 @@ class GraceSettingController extends Controller
         $r1 = DB::table('attendances')
             ->whereIn('status', $affected)
             ->whereNotNull('check_in')
-            ->whereRaw('(EXTRACT(HOUR FROM check_in) * 60 + EXTRACT(MINUTE FROM check_in)) >= ?', [$halfDayCheckin])
+            ->whereRaw('(HOUR(check_in) * 60 + MINUTE(check_in)) >= ?', [$halfDayCheckin])
             ->update(['status' => 'half_day', 'updated_at' => now()]);
 
         // Rule 2: worked < 4 hours (and check-in < 11 AM) → half_day
         $r2 = DB::table('attendances')
             ->whereIn('status', $affected)
             ->whereNotNull('check_in')
-            ->whereRaw('(EXTRACT(HOUR FROM check_in) * 60 + EXTRACT(MINUTE FROM check_in)) < ?', [$halfDayCheckin])
+            ->whereRaw('(HOUR(check_in) * 60 + MINUTE(check_in)) < ?', [$halfDayCheckin])
             ->whereNotNull('working_hours')
             ->whereRaw('working_hours > 0 AND working_hours < 4')
             ->update(['status' => 'half_day', 'updated_at' => now()]);
@@ -76,16 +76,16 @@ class GraceSettingController extends Controller
         $r3 = DB::table('attendances')
             ->whereIn('status', ['present', 'late'])
             ->whereNotNull('check_in')
-            ->whereRaw('(EXTRACT(HOUR FROM check_in) * 60 + EXTRACT(MINUTE FROM check_in)) < ?', [$halfDayCheckin])
-            ->whereRaw('(EXTRACT(HOUR FROM check_in) * 60 + EXTRACT(MINUTE FROM check_in)) > ?', [$thresholdMin])
+            ->whereRaw('(HOUR(check_in) * 60 + MINUTE(check_in)) < ?', [$halfDayCheckin])
+            ->whereRaw('(HOUR(check_in) * 60 + MINUTE(check_in)) > ?', [$thresholdMin])
             ->update(['status' => 'late', 'updated_at' => now()]);
 
         // Rule 4: everything else with check_in < 11 AM and within threshold → present
         $r4 = DB::table('attendances')
             ->whereIn('status', ['present', 'late'])
             ->whereNotNull('check_in')
-            ->whereRaw('(EXTRACT(HOUR FROM check_in) * 60 + EXTRACT(MINUTE FROM check_in)) < ?', [$halfDayCheckin])
-            ->whereRaw('(EXTRACT(HOUR FROM check_in) * 60 + EXTRACT(MINUTE FROM check_in)) <= ?', [$thresholdMin])
+            ->whereRaw('(HOUR(check_in) * 60 + MINUTE(check_in)) < ?', [$halfDayCheckin])
+            ->whereRaw('(HOUR(check_in) * 60 + MINUTE(check_in)) <= ?', [$thresholdMin])
             ->update(['status' => 'present', 'updated_at' => now()]);
 
         return $r1 + $r2 + $r3 + $r4;
