@@ -25,15 +25,13 @@ class AuthController extends Controller
             'email'    => 'required|email',
             'password' => 'required',
         ]);
-        DB::enableQueryLog();
         if (Auth::attempt($credentials, $request->boolean('remember'))) {
             $request->session()->regenerate();
             ActivityLog::record('login', 'Auth',
                 'User logged in: ' . Auth::user()->name . ' (' . Auth::user()->email . ')',
                 Auth::id(), Auth::user()->name
             );
-            dd(DB::getQueryLog());
-            // return redirect()->intended(route('dashboard'));
+            return redirect()->intended(route('dashboard'));
         }
 
         return back()->withErrors([
